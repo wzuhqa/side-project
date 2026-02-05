@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: shopnext-ecommerce
+    env: node
+    buildCommand: cd ../frontend && npm install && npm run build
+    startCommand: npm start
+    rootDirectory: backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        fromDatabase:
+          name: shopnext-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+
+databases:
+  - name: shopnext-db
+    plan: free
+    databaseName: shopnext
+    user: shopnext
