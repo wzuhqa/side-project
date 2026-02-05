@@ -1,0 +1,181 @@
+/* Search Bar Styles */
+.search-bar {
+  position: relative;
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background: #f5f5f7;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.search-form:focus-within {
+  background: #fff;
+  box-shadow: 0 0 0 2px #667eea;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-button {
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.search-button:hover {
+  color: #667eea;
+}
+
+.search-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Search Suggestions Dropdown */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  margin-top: 8px;
+  overflow: hidden;
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestion-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  color: #666;
+}
+
+.loading-spinner.small {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e0e0e0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.suggestion-products {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+  background: #f5f5f7;
+}
+
+.suggestion-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.suggestion-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.suggestion-name {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.suggestion-price {
+  font-size: 0.85rem;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.view-all-results {
+  padding: 15px;
+  text-align: center;
+  color: #667eea;
+  font-weight: 600;
+  cursor: pointer;
+  border-top: 1px solid #eee;
+  transition: background 0.2s;
+}
+
+.view-all-results:hover {
+  background: #f5f5f7;
+}
+
+.no-suggestions {
+  padding: 30px;
+  text-align: center;
+  color: #666;
+}
+
+.no-suggestions span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.no-suggestions p {
+  margin: 0;
+  font-size: 0.9rem;
+}

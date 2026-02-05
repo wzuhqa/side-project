@@ -1,0 +1,135 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-svg {
+  flex-shrink: 0;
+}
+
+.logo-circle {
+  animation: circlePulse 3s ease-in-out infinite;
+}
+
+@keyframes circlePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.logo-icon {
+  transform-origin: center;
+}
+
+.logo-star {
+  animation: starPulse 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes starPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+.logo-dot {
+  animation: dotBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes dotBounce {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-3px);
+    opacity: 0.7;
+  }
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-title {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.logo-tagline {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 0.7rem;
+  color: #6b7280;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Size variants */
+.logo-small .logo-title {
+  font-size: 1.1rem;
+}
+
+.logo-small .logo-tagline {
+  display: none;
+}
+
+.logo-small {
+  gap: 8px;
+}
+
+.logo-large .logo-title {
+  font-size: 2rem;
+}
+
+.logo-large .logo-tagline {
+  font-size: 0.85rem;
+}
+
+.logo-large {
+  gap: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logo-tagline {
+    display: none;
+  }
+  
+  .logo {
+    gap: 8px;
+  }
+  
+  .logo-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-title {
+    font-size: 1.1rem;
+  }
+}
