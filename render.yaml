@@ -2,8 +2,8 @@ services:
   - type: web
     name: shopnext-ecommerce
     env: node
-    buildCommand: npm install && cd ../frontend && npm install && npm run build
-    startCommand: npm start
+    buildCommand: cd backend && npm install && cd ../frontend && npm install && npm run build
+    startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
